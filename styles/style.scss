@@ -1,0 +1,202 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian&display=swap');
+@import './variables';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Part 1 - Testimonial */
+
+.Part1-Testimonial {
+    background-color: $gray-color;
+    @include flexCenter(column);
+    height: 100vh;
+}
+
+.testimonial {
+    @include flexCenter(column);
+    width: 300px;
+    margin-top: 50px;
+    border-radius: 25px;
+    box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    &-header {
+        @include flexCenter(column);
+        background-color: $white-color;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        padding: 0 25px;
+        height: 230px;
+        padding-bottom: 60px;
+    }
+    &-foto {
+        @include flexCenter(column);
+        background-color: $white-color;
+        width: 100%;
+        img {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        border: 5px solid $white-color;
+        position: absolute;
+        }  
+    }
+    &-footer{
+        @include flexCenter(column);
+        background-color: $purple-color;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        height: 150px;
+        h1 {
+            color: $white-color;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        p {
+            color: $gray-color;
+            text-align: center;
+        }
+    }
+
+}
+
+/* Part 2 - Portfolio Grid */
+
+.Part2-PortfolioGrid {
+    background-color: $gray-color;
+    @include gridTable(repeat(7, 1fr),1fr);
+}
+
+.portfolio {
+    @include flexCenter(column);
+    img {
+        border-radius: 25px;
+        height: 95%;
+        width: 95%;
+    }
+    &:hover img {
+        filter: brightness(10%);
+    }
+    button {
+    position: absolute;
+    padding: 1% 5%;
+    display: none;
+    }
+    &:hover button {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+
+@media (min-width: 768px) {
+
+    .Part2-PortfolioGrid {
+        background-color: $gray-color;
+        @include gridTable(repeat(4, 1fr),repeat(2, 1fr));
+    }
+
+}
+
+
+
+@media (min-width: 1200px) {
+
+    .Part2-PortfolioGrid {
+        background-color: $gray-color;
+        @include gridTable(repeat(3, 1fr),repeat(3, 1fr));
+    }
+   
+}
+
+
+
+
+/* Part 3 - Social Media Buttons */
+
+
+.Part3-SocialMediaButtons {
+    background-color: $gray-color;
+    height: 100vh;
+}
+
+
+.footer-animation {
+    @include flexCenter(column);
+    padding-top: 75vh;
+    float: right;
+    ul {
+        @include flexCenter(column);
+        .blog-desktop {background-color: #e17b77;
+        position: absolute;
+        margin-bottom: 400px;
+        right: -180px;};
+        .blog-twitter {
+            background-color: #00aced;
+            position: absolute;
+            margin-bottom: 300px;
+            right: -180px;};
+        .blog-linkedin {
+            background-color: #007bb6;
+            position: absolute;
+            margin-bottom: 200px;
+            right: -180px;};
+        .blog-facebook {
+            background-color: #3b5998;
+            position: absolute;
+            margin-bottom: 100px;
+            right: -180px;};
+        .blog-github {
+            background-color: #333;
+            position: absolute;
+            right: -180px;};
+        li {
+            @include flexCenter(row);
+            flex-wrap: wrap;
+            list-style: none;
+            width: 240px;
+            height: 50px;
+            justify-content: left;
+            align-items: left;
+            padding-left: 20px;
+            transition: 1s all ease-in-out;
+            i {
+                color: $white-color;
+                width: 40px;
+                cursor: pointer;
+                font-size: 1.5em;
+            }
+            a {
+                padding-left: 10px;
+                color: $white-color;
+            }
+        &:hover {
+            transform: translateX(-180px);
+        }
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

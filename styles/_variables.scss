@@ -1,0 +1,27 @@
+
+
+
+// Variables
+
+$white-color: #fff;
+$gray-color: #c3cfe2;
+$purple-color: #686de0;
+
+
+// Mixin
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+
+@mixin gridTable($nuRow,$nuCol) {
+    display: grid;
+    grid-template-rows: $nuRow;
+    grid-template-columns: $nuCol;
+}
+
+
